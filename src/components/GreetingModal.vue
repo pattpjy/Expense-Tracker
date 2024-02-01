@@ -6,7 +6,7 @@
       Take control of your money, effortlessly manage your income and expenses,
       and stay on top of your financial goals.
     </p>
-    <button @click="handleClosedModal">Close</button>
+    <button class="btn" @click="handleClosedModal">Close</button>
   </div>
 </template>
 <script setup>
