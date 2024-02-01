@@ -23,6 +23,8 @@ body {
 .container {
   margin: 30px auto;
   width: 400px;
+  box-shadow: var(--box-shadow);
+  padding: 2em;
 }
 
 h1 {

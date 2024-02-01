@@ -1,1 +1,1 @@
-<template><h2>Expense Tracker</h2></template>
+<template><h2>Budget Tracker</h2></template>
