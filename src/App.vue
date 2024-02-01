@@ -1,6 +1,7 @@
 <template>
-  <Header />
-  <div class="container">
+  <GreetingModal v-if="modalStatus" @closedModal="handleClosedModal" />
+  <div class="container" v-if="!modalStatus">
+    <Header />
     <Balance :total="+total" /><IncomeExpense
       :income="+income"
       :expense="+expense"
@@ -16,7 +17,7 @@ import Balance from './components/Balance.vue';
 import IncomeExpense from './components/IncomeExpense.vue';
 import TransactionList from './components/TransactionList.vue';
 import AddTransaction from './components/AddTransaction.vue';
-
+import GreetingModal from './components/GreetingModal.vue';
 import { ref, computed, onMounted } from 'vue';
 import { useToast } from 'vue-toastification';
 
@@ -83,5 +84,15 @@ const handleTransactionDeleted = (id) => {
 //Save to local storage
 const savedTransactionsToLocalStorage = () => {
   localStorage.setItem('transactions', JSON.stringify(transactions.value));
+};
+
+//Greeting Trigger
+const modalStatus = ref(true);
+
+//Greeting Handle Close button clicked
+
+const handleClosedModal = () => {
+  modalStatus.value = false;
+  console.log('click');
 };
 </script>
